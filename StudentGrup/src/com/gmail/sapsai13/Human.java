@@ -1,6 +1,7 @@
 package com.gmail.sapsai13;
 
 public class Human {
+
 	private String name;
 	private String surname;
 	private int age;
@@ -20,7 +21,7 @@ public class Human {
 		this.phoneNumber = phoneNumber;
 	}
 	
-	public void humanInfo () {
+	public void info () {
 		System.out.println(surname + " "+ name );
 		System.out.println(age + " years old");
 		System.out.println("lives at " + address);

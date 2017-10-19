@@ -1,0 +1,56 @@
+package com.gmail.sapsai13;
+
+public class Student extends Human {
+	private String specialization;
+	private int course;
+	private double averageScore;
+	
+	public Student() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Student(String name, String surname, int age, String address, String phoneNumber) {
+		super(name, surname, age, address, phoneNumber);
+		// TODO Auto-generated constructor stub
+	}
+
+	public Student(String name, String surname, int age, String address, String phoneNumber, String specialization, int course, double averageScore) {
+		super(name, surname, age, address, phoneNumber);
+		this.specialization = specialization;
+		this.course = course;
+		this.averageScore = averageScore;
+	}
+
+	public String getSpecialization() {
+		return specialization;
+	}
+
+	public void setSpecialization(String specialization) {
+		this.specialization = specialization;
+	}
+
+	public int getCourse() {
+		return course;
+	}
+
+	public void setCourse(int course) {
+		this.course = course;
+	}
+
+	public double getAverageScore() {
+		return averageScore;
+	}
+
+	public void setAverageScore(double averageScore) {
+		this.averageScore = averageScore;
+	}
+
+	@Override
+	public String toString() {
+		return "Student [specialization=" + specialization + ", course=" + course + ", averageScore=" + averageScore
+				+ "]";
+	}
+	
+
+}
