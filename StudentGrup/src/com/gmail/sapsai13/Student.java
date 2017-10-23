@@ -1,10 +1,16 @@
 package com.gmail.sapsai13;
 
-public class Student extends Human {
+public class Student extends Human implements Comparable <Student> {
 	private String specialization;
 	private int course;
 	private double averageScore;
 	
+	@Override
+	public int compareTo(Student stu) {
+		
+		return this.getSurname().compareTo(stu.getSurname());
+	}
+
 	public Student() {
 		super();
 		// TODO Auto-generated constructor stub

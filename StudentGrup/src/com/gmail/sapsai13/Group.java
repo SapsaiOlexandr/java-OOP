@@ -33,8 +33,51 @@ public class Group {
 
 	}
 
+	// public void sortStud () {
+	// Arrays.sort(groupStud, 0, studNum-1, (studentOne, studentTwo) -
+	// studentOne.getFirstName().compareTo(studentTwo.getFirstName())););
+	//
+	// }
+
+	private void sortBySurname() {
+		for (int i = 0; i < groupStud.length - 1; i++) {
+			for (int j = i + 1; j < groupStud.length; j++) {
+				if (compareStudentBySurname(groupStud[i], groupStud[j]) > 0) {
+					Student temp = groupStud[i];
+					groupStud[i] = groupStud[j];
+					groupStud[j] = temp;
+				}
+			}
+		}
+	}
+
+	private int compareStudentBySurname(Student i, Student j) {
+		if (i != null && j == null) {
+			return 1;
+		}
+		if (i == null && j != null) {
+			return -1;
+		}
+		if (i == null && j == null) {
+			return 0;
+		}
+		return i.getSurname().compareTo(j.getSurname());
+	}
+
 	@Override
 	public String toString() {
-		return "Group [groupStud=" + Arrays.toString(groupStud[1]) + "]";
+		StringBuilder builder = new StringBuilder();
+
+		sortBySurname();
+
+		for (int i = 0; i < 10; i++) {
+			if (groupStud[i] != null) {
+				builder.append("Surname  " + groupStud[i].getSurname() + "name  " + groupStud[i].getName()
+						+ "Specialist  " + groupStud[i].getSpecialization() + "%n");
+			}
+		}
+
+		return builder.toString();
 	}
+
 }
