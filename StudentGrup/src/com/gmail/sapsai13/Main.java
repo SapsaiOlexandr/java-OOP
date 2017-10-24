@@ -10,12 +10,12 @@ public class Main {
 		
 		Student first = new Student ("Vasil","Bleck",39, "Kiev, Vasilkovska str. 21", "0663332211", "IT", 2, 4.5 );
 		Student sekond = new Student ("Alex","Red",15, "Odessa, Deribasova str. 12", "0663332212", "IT", 2, 4 );
-		Student three = new Student ("Vasil","Wight",15, "Odessa, Deribasova str. 12", "0663332212", "IT", 2, 4 );
+		Student three = new Student ("Vasil","Wight",20, "Odessa, Deribasova str. 12", "0663332212", "IT", 2, 4 );
 		Student four = new Student ("Alex","Yelov",15, "Odessa, Deribasova str. 12", "0663332212", "IT", 2, 4 );
-		Student five = new Student ("Olya","Absent",15, "Odessa, Deribasova str. 12", "0663332212", "IT", 2, 4 );
+		Student five = new Student ("Olya","Absent",13, "Odessa, Deribasova str. 12", "0663332212", "IT", 2, 4 );
 		Student six = new Student ("Alex","Tekila",15, "Odessa, Deribasova str. 12", "0663332212", "IT", 2, 4 );
 		Student seven = new Student ("Jeck","Deniels",15, "Odessa, Deribasova str. 12", "0663332212", "IT", 2, 4 );
-		Student eight = new Student ("Alex","Red",15, "Odessa, Deribasova str. 12", "0663332212", "IT", 2, 4 );
+		Student eight = new Student ("Alex","Red",21, "Odessa, Deribasova str. 12", "0663332212", "IT", 2, 4 );
 		Student nain = new Student ("Jeck","Redd",15, "Odessa, Deribasova str. 12", "0663332212", "IT", 2, 4 );
 		Student ten = new Student ("Alex","Redddd",15, "Odessa, Deribasova str. 12", "0663332212", "IT", 2, 4 );
 		
