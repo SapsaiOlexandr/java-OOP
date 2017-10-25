@@ -43,6 +43,8 @@ public class Main {
 		atp.delStud(sekond);
 		
 		System.out.println(atp.toString());
+		Group woriers = atp.Warriors();
+		System.out.println("11" + woriers.toString());
 		
 	}
 

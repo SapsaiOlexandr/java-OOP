@@ -77,10 +77,11 @@ public class Group implements Voenkom {
 	@Override
 	public Group Warriors() {
 		Group warrior = new Group();
-		for (int i = 0; i > 10; i++) {
+		for (int i = 0; i < 10; i++) {
 
-			if (this.groupStud[i] != null & this.groupStud[i].getAge() > 18) {
-				warrior.addStud(this.groupStud[i]);
+			if (groupStud[i] != null & groupStud[i].getAge() > 18) {
+				warrior.addStud(groupStud[i]);
+				
 
 			}
 		}
