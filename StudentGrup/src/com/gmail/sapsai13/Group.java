@@ -1,5 +1,7 @@
 package com.gmail.sapsai13;
 
+import java.util.Scanner;
+
 public class Group implements Voenkom {
 	private Student[] groupStud = new Student[10];
 	private int studNum = 0;
@@ -31,8 +33,6 @@ public class Group implements Voenkom {
 
 	}
 
-
-
 	private void sortBySurname() {
 		for (int i = 0; i < groupStud.length - 1; i++) {
 			for (int j = i + 1; j < groupStud.length; j++) {
@@ -45,25 +45,125 @@ public class Group implements Voenkom {
 		}
 	}
 
-	private int compSurname(Student i, Student j) {
-		if (i != null && j == null) {
+	public void sortByParametr() {
+		Scanner sc = new Scanner(System.in);
+		String param;
+		for (;;) {
+			System.out.println("Enter parametr 'Name' or 'Surname' or 'Age'");
+			param = sc.nextLine().toLowerCase();
+
+			if (param.equals("name") || param.equals("surname") || param.equals("age")) {
+				System.out.println(123);
+				break;
+			}
+		}
+		switch (param) {
+		case "name": {
+
+			for (int i = 0; i < groupStud.length - 1; i++) {
+				for (int j = i + 1; j < groupStud.length; j++) {
+					if (compName(groupStud[i], groupStud[j]) > 0) {
+						Student temp = groupStud[i];
+						groupStud[i] = groupStud[j];
+						groupStud[j] = temp;
+					}
+				}
+			}
+
+			break;
+
+		}
+
+		case "age": {
+
+			for (int i = 0; i < groupStud.length - 1; i++) {
+				for (int j = i + 1; j < groupStud.length; j++) {
+					if (compAge(groupStud[i], groupStud[j]) > 0) {
+						Student temp = groupStud[i];
+						groupStud[i] = groupStud[j];
+						groupStud[j] = temp;
+					}
+				}
+			}
+
+			break;
+
+		}
+		case "surname": {
+
+			for (int i = 0; i < groupStud.length - 1; i++) {
+				for (int j = i + 1; j < groupStud.length; j++) {
+					if (compSurname(groupStud[i], groupStud[j]) > 0) {
+						Student temp = groupStud[i];
+						groupStud[i] = groupStud[j];
+						groupStud[j] = temp;
+					}
+				}
+			}
+
+			break;
+
+		}
+
+		}
+
+		sc.close();
+	}
+
+	private int compSurname(Student studI, Student studJ) {
+		if (studI != null && studJ == null) {
 			return 1;
 		}
-		if (i == null && j != null) {
+		if (studI == null && studJ != null) {
 			return -1;
 		}
-		if (i == null && j == null) {
+		if (studI == null && studJ == null) {
 			return 0;
 		}
-		return i.getSurname().compareTo(j.getSurname());
+		return studI.getSurname().compareTo(studJ.getSurname());
 	}
+
+	private int compName(Student studI, Student studJ) {
+		if (studI != null && studJ == null) {
+			return 1;
+		}
+		if (studI == null && studJ != null) {
+			return -1;
+		}
+		if (studI == null && studJ == null) {
+			return 0;
+		}
+		return studI.getName().compareTo(studJ.getName());
+	}
+
+	private int compAge(Student studI, Student studJ) {
+		if (studI != null && studJ == null) {
+			return 1;
+		}
+		if (studI == null && studJ != null) {
+			return -1;
+		}
+		if (studI == null && studJ == null) {
+			return 0;
+		}
+
+		if (studI.getAge() > studJ.getAge()) {
+			return 1;
+		} else if (studI.getAge() == studJ.getAge()) {
+			return 0;
+		} else {
+			return -1;
+		}
+
+	}
+	
+	
 
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 
-		sortBySurname();
-
+		
 		for (int i = 0; i < 10; i++) {
 			if (groupStud[i] != null) {
 				builder.append("Surname  " + groupStud[i].getSurname() + ", name  " + groupStud[i].getName()
@@ -79,9 +179,8 @@ public class Group implements Voenkom {
 		Group warrior = new Group();
 		for (int i = 0; i < 10; i++) {
 
-			if (groupStud[i] != null & groupStud[i].getAge() > 18) {
+			if (groupStud[i] != null && groupStud[i].getAge() > 18) {
 				warrior.addStud(groupStud[i]);
-				
 
 			}
 		}

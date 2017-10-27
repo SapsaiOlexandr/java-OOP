@@ -37,14 +37,20 @@ public class Main {
 		atp.addStud(eight);
 		atp.addStud(nain);
 		atp.addStud(ten);
-		// atp.addStud(first);
+		//atp.addStud(first);
 		
 		System.out.println(atp.toString());
 		atp.delStud(sekond);
 		
 		System.out.println(atp.toString());
 		Group woriers = atp.Warriors();
-		System.out.println("11" + woriers.toString());
+		System.out.println(woriers.toString());
+		
+		atp.sortByParametr();
+		
+		System.out.println(atp.toString());
+		
+		
 		
 	}
 
